@@ -1,0 +1,223 @@
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{setspace}
+
+\usepackage{listings}
+\usepackage{xcolor} % for setting colors
+\lstset{
+    frame=tb, % draw a frame at the top and bottom of the code block
+    tabsize=4, % tab space width
+    showstringspaces=false, % don't mark spaces in strings
+    numbers=left, % display line numbers on the left
+    commentstyle=\color{green}, % comment color
+    keywordstyle=\color{blue}, % keyword color
+    stringstyle=\color{red} % string color
+}
+
+\usepackage{float}
+
+\usepackage{blindtext} %for enumarations
+
+\usepackage[]{hyperref}  %link collor
+
+%talbe layout to the right
+%\usepackage[labelfont=bf]{caption}
+%\captionsetup[table]{labelsep=space,justification=raggedright,singlelinecheck=off}
+%\captionsetup[figure]{labelsep=quad}
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{Masell} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+%\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+
+\setlength\parskip{3pt}
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{Denison University} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge  CS 271: Data Systems Semester Portfolio \\ % The assignment title
+\
+}
+
+\author{Katie Masell} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+%\nocite{*}
+\maketitle % Print the title
+
+\newpage
+
+
+\newpage
+
+
+
+\begin{abstract}
+
+Introduction
+\\
+\\
+As a Computer Science major at Denison University, I have grown not only in my skills within the computer science field but in my skills as a problem solver and in my ability to effectively communicate with others while attempting to complete a task.  In this portfolio, I will convey the tasks that I have worked on and the abilities I have acquired.  As you go through this portfolio, you will see each of the core competencies that I feel I have mastered throughout the semester.  For each one, I list examples proving my level of knowledge on each subject.  
+\\ 
+Core Competencies
+\\
+\indent Analysis of Algorithms: Mastery.  Proving correctness of algorithms has improved over the semester.  In Appendix A, I prove that the for loop in the Linear Search shown before is correct.  To correctly prove a loop invariant, you must prove that it holds true at initialization, prove that it continues to hold true throughout the loop, and upon termination- returns the correct output.  
+For the preconditions and post-conditions of algorithms, we discuss the concept of the algorithm in class and touch briefly on the preconditions.  What must be included in the input for this algorithm to work properly? In Appendix B, the precondition is that the list must contain at least one value.  This is dealt with in the c++ implementation because it checks to see if the list is empty, and if so, it will make the head point to the item.  Also the variable that is appended must be valid in in the template given.  Similarly, in Appendix C.1., the algorithm for the binary search's successor requires that the node must not be null, otherwise it would not be able to return the correct output.  
+\\
+Time complexity is a rather interesting concept that I believe I have mastered the skills in proving functions run at the time that is predicted.  The time complexity is shown in steps during the algorithm, so for loops that parse through an entire array size n, then the algorithm is $\Omega$ n.  To prove the time complexity, the definition of what the notations are is important.  In appendix A.3, you will find the definition of Big-$\Theta$ notation.  Big-O and Big-$\Omega$ notation are basically the same except Big-O is for upper bound, Big-$\Omega$ is for lower-bound, and Big-$\Theta$ is upper and lower-bound.  In Appendix A.4, you will find a Big-O proof using recursion tree method and a proof by induction.   
+\\
+The time complexities for the data structures that have been implemented change based on the way that they are implemented.  For example, in the Successor algorithm for binary search tree (C.1), if the tree's height is equal to the number on nodes, it will take significantly longer compared to if the height was $log_2n$.   Throughout the different data structures, you can assume that the implementations for linear data structures will be linear.\\
+I have improved immensely in the understanding of time complexity for each algorithm.  From understanding for loops to translating that to Big-O notation, I go about coding with a different outlook that includes how to make my program run faster. 
+\\
+\indent Linear Data Structures: Mastery. Creating this data structure that we also learned in 173 reinforced the ideas of the creative data structure.  In appendix B, you will see the append code from the C++ implementation of the linked list class that I created. If the linked list is long, the time complexity will be pretty bad compared to other non-linear data structures.  Dynamically allocated arrays allows for the data to be held in one place, until it fills up, where then it points to another location that will hold the rest of the data.  The list ADT contains methods such as (contains, append, add, isEmpty, size, remove).  It does not require a specific order and is good at just holding information.  The Stack ADT contains the methods (push, pop, top, isEmpty).  This method abides by the last in/ first out technique, compared to the queue which is first in/ first out.  The stack ADT would be useful for if you need temporary storage that you can access right away.  Last in first out.  Recursive loops create stacks for themselves.  
+\\
+Priority Queues and Binary Heaps: Mastery.  These are Data structures that must be ordered a certain way.  The Priority Queues are ordered based on a priority number that is completely different from the item itself in the queue.  The priority queue means that the first item in the queue is the most important item in the queue.  Typically the priority queues are useful with binary heaps.  A min binary heap is one that when implemented creates a tree structure where each parent node is less than or equal to it's children nodes.  The max heap is the complete opposite.  I implemented the priority min heap ADT in C++.  This abides by the min heap properties that I mentioned before.  The priority min heap creates a min heap based on the importance of the items in the heap.  The binary heap's ADT includes (build-heap, get-min (just the first index), extract-min (pops the first index), decrease-key, insert, delete.  As I worked with the most recent algorithms with the graphs, I understood more deeply the minqueues.  In Appendix E, you will see the implementation of the  algorithm. 
+\\
+Hash Tables:  Proficient.  Hash tables are essential when storing a massive amount of information and being able to access it quickly.  I have been familiar with the concepts of hash functions from this past summer when I was working with massive amounts of data.  This implementation was a little rough, but I was able to understand what a good hash function should look like.  One way to implement hash tables is chain hashing, which utilizes linked lists. The worst case for linked lists is everything being mapped to one place which when retrieving something will amount to linear time.  
+
+\\
+Binary Search Trees: Mastery with distinction. This data structure when appended adds items on the left or right side of the tree based on if they are larger or smaller than the head and then each child of the head's children and so on.  In appendix C, I show the Successor algorithm with input and output.  The compact algorithm takes the head and checks whether the right side (the greater numbers) is not null and then returns the smallest of those numbers.  Otherwise, it parses through and returns the biggest of the left side.  The Binary Search tree implementation relies on the list being randomly sorted when implemented.  If it was a sorted list with n items, the height would be n, which would make the algorithms worst cases to be linear or O(n). The need for a successor algorithm is unique to binary trees because the successor is not always directly next to the original input.  Sometimes it is further up the tree or in the completely other side of the tree. 
+
+Object-oriented Programming:  Mastery.  Object oriented programming is implementing the ADT's using templated classes in C++ and working with the classes to solve problems.  I have improved on this throughout the semester, starting uneasily with the minHeap implementation, but as I go on, I have improved in the test file, making sure everything works before moving on to other implementations.  A good object oriented implementation in C++ often includes a header file that organizes the constructors and methods that implements the ADTs of the data structures.  In the Appendix D, you will see a .h file that I created for the MinHeap implementation.  There are public methods that can be accessed by the client and private methods that can only be accessed by the creator in the direct implementation.  When multiple classes are used, there exists different inheritances from one class to another.  If a class inherits another with public access, then it can access all of the inherited class's public methods as public, protected as protected, and private as private.  When a class inherits another class with protected access, the public classes are protected, the protected and private classes are both private.  When it interits with private access(unusual), all of the methods from the inherited classes are private.  
+\\
+\\
+Professional Practice: Mastery with Distinction.  I will admit that this core competency is one that I am still working on. Balance is one of the main goals I try to master in the day-to-day.  Prioritizing intentional conversations with life-long friends will sometimes end in a weaker homework assignment, but in the end of the day I will remember the conversations that happened in the dorm room over the homework assignment.  Nevertheless, I think that my lifelong relationships will happen in the workplace in the future.  I pride myself in establishing  effective communicative relationships with my peers. We tend to enjoy working on our assignments and get the task done.  I could improve in individually brainstorming, but I find it so much easier on a team where we can collaborate and brainstorm and laugh and be prideful in the work that we created.  In class, I participate, understanding the concepts the professor is teaching that day  quickly, staying engaged in the class discussion and the lectures.  I make attending class a priority as I know that it is there where I will obtain the details I might need to complete an assignment. The LaTex setting has gotten easier over time.  It is something that I could see myself using when I need to show step by step math proofs.  At first, I did not understand the necessity of LaTex over Word or Google Drive, but it is really nice when importing other LaTex documents I have typed up, especially for this portfolio, I can just input them straight into this document.  I take deadlines very seriously.  When the project is something to love and something I am passionate about, I tend to have a better grasp on the concepts and I am more willing to go the extra mile to do my best on it.  
+\\
+
+\section{Conclusion}
+To reiterate how much this class has allowed me to grow, I will end by saying thank you to my professor for demanding so much and never expecting anything less than my best.  The aforementioned core competencies could not have been achieved without the help of my professor and my peers. 
+Experiencing many ups and downs in the semester, being busier some weeks compared to others, and  learning how to manage my time effectively.  I have been learning how to juggle school and extra-curriculars and social experiences.   Moving forward after this class, I will take what I have learned, from the time management all the way down to comments and docstrings.  I will utilize the concepts on data structures for interview questions, problem solving in the workplace, and knowing that if I can get through this, then I can get through everyday struggles that I am bound to face.  This was one of the most challenging classes of my Denison career, so it will be worth it to continue using the skillset I have developed in higher level classes and in the work place.
+
+
+
+\newpage
+
+\singlespacing
+
+\appendix
+
+\section{Loop Invariants}
+
+\subsection{Loop invariant proof}  
+        (a) LinSearch(A, v)
+    
+    .  for i = 1 to len[A] do \\
+    . \hspace{5mm} if A[i] == v\\
+    . \hspace{10mm} return i\\
+    .  return -1
+    \\
+    
+     Loop Invariant: At the start of each iteration i, the given array A[$1 \cdots i-1$] does not contain v.
+    \\
+    
+    Initialization: When i = 1, A[$1 \cdots 0$]
+    which is the empty set which is trivially not equal to v, so the loop invariant holds true at the initialization. 
+    
+    
+    Maintenance:  At the start of iteration i (i>1), if A[i] is equal to v, then the for loop will terminate at the ith iteration.  Otherwise the array A[$1 \cdots i-1$] does not contain an element equal to v, and A[i] is not equal to v, so at the start of the next iteration, the loop invariant is still holding true.
+    
+    
+    Termination: On termination of the for loop, if v is in A, then i will be returned.  Otherwise, all of the elements in A[$1 \cdots$ i+1] are not equal to v, and -1 is returned. 
+    
+    Since on termination, if v is in the array, the index of the first v is returned, or -1 is returned if v is not in the array, the output of the equation is as expected.
+
+
+\subsection{Asymptotic Time Complexities}
+$\Theta$(g(n)) = \{f(n) such that there exists a $c_1, c_2, n_0 > 0$ such that for all $n \geq n_0, c_1f(n) \leq f(n) \leq c_2f(n)$\}
+
+\subsection{Proof of Recursion Tree Method}
+\[T(n) = \begin{cases} 
+1 if n \leq 4 \\
+T(n/4) + n^2 if n \geq 5 
+\end{cases}\]
+\item $T(n) = 2T(\frac{n}{2}) + n^3$ with a recursion tree looks like this:
+\[2[T(\frac{n}{2})] + n^3\]
+
+\[2[2T(\frac{n}{2^2}) + (\frac{n}{2^2})^3] + n^3 = 2^2[T(\frac{n}{2^2})] + \frac{n^3}{2^3} + n^3\]
+
+
+\[2^2[T(\frac{n}{2^3}) + (\frac{n}{2^3})^3] + (\frac{n}{32}) + n^3 = 2^2[T(\frac{n}{2^3})] + \frac{n^3}{32^2} + (\frac{n^3}{32}) + n^3\]
+
+\[2^i(T(\frac{n}{2^i}) + n^3\sum_{j=0}^{i} (\frac{1}{4})^j\]
+
+To figure out when to stop the recursion loop, we must figure out when $\frac{n}{2^i} = 1$. We see $n = 2^i$ which means $i = log_2(n)$.
+
+Using Substitution to replace every i with ${log_2(n)}$:
+
+\[2^{log_2(n)}(T(\frac{n}{2^{log_2(n)}}) + n^3 \sum_{j=0}^{log_2(n)} (\frac{1}{4})^j \]
+
+We know that $2^{log_2(n)}$ is equivalent to $n^{log_2(2)}$ which  equals n. We also know that if we assume the summation goes to infinity that $\sum_{x=0}^{\infty} a^x = \frac{1}{1-a}$ as long as $0 < a < 1$, so our equation can look like this:
+
+\[n(T(\frac{n}{n}) + n^3 (\frac{1}{1-\frac{1}{4}}) = n\cdot c + \frac{4}{3} n^3
+\]
+
+This is O($n^3$).
+
+%\input{asymptotictime.tex}
+
+
+\section{Linked List}
+
+\input{linkedlist.tex}
+
+\section{Binary Search Trees}
+
+\input{bintrees.tex}
+
+\input{binarySearch.tex}
+
+\section{.h file}
+
+\input{h.tex}
+
+\section{Dijkstra's Algorithm}
+
+\input{dijkstras.tex}
+
+
+\end{abstract}
+
+\end{document}
